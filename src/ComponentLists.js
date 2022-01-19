@@ -1,18 +1,18 @@
 import EachList from "./EachList";
 import {useState, useEffect} from 'react';
 
-const Componentlists = ({data, setData}) => {
-
-    const [value, setValue] = useState('')
+const Componentlists = () => {
+    
+    const [value, setValue] = useState('');
+    let [data, setData] = useState([]);
 
     useEffect(() => {
-        let newData = data.filter(item => {
-            return item.title.includes(value)
-        })
-        console.log(newData)
-        setData(newData)
+      data = fetch('https://fakestoreapi.com/products/')
+      .then(res => res.json())
+      .then(json => setData(json));
     }, [value]);
 
+    let filteredData = data.filter(item => item.title.includes(value))
     return (
         <>
             <div className="genereal">
@@ -23,7 +23,7 @@ const Componentlists = ({data, setData}) => {
                 </form>
                 <div className="wrap">
                     {
-                        data.map((item, index) => {
+                        filteredData.map((item, index) => {
                             return (
                                 <EachList 
                                     key={index}
