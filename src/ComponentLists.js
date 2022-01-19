@@ -17,7 +17,7 @@ const Componentlists = () => {
         <>
             <div className="genereal">
                 <form>
-                    <input type="search" id="filter" placeholder="Search..." value={value} onChange={evt => {
+                    <input type="search" id="filter" placeholder="Սա պոիսկի տեղ է..." value={value} onChange={evt => {
                         setValue(evt.target.value)
                     }} />
                 </form>
