@@ -1,0 +1,30 @@
+.App {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  width: 90%;
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eachItem {
+  flex: 1 1 20%;
+  flex-direction: column;
+  border: 1px solid green;
+  background-color: blanchedalmond;
+  border-radius: 5%;
+  margin: 20px;
+  padding-top: 10px;
+}
+
+#filter {
+  margin-top: 20px;
+  width: 450px;
+  padding: 5px;
+}
